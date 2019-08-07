@@ -18,8 +18,4 @@ public interface FileOperation<FileType, ReturnType> {
      */
 	public ReturnType doOperation();
 	
-	/**
-     * Prepares the execution of the operation.
-     */
-	public void prepare();
 }

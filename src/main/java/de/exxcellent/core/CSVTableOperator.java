@@ -43,6 +43,7 @@ public interface CSVTableOperator {
      * @return number of columns, 0 if the CSV file has not been loaded.
      */
 	public int getNumberOfColumns();
+
 	
 	 /**
      * Gets a specific entry of the table at a position (referred as (row,column) entry).
