@@ -17,4 +17,9 @@ public interface FileOperation<FileType, ReturnType> {
      * @return the final value which has been retrieved file during the execution.
      */
 	public ReturnType doOperation();
+	
+	/**
+     * Prepares the execution of the operation.
+     */
+	public void prepare();
 }
