@@ -3,8 +3,8 @@ package de.exxcellent.core;
 import java.util.ArrayList;
 
 /**
- * Basic interface to define functions that can be are necessary to access the contents of a loaded CVS file. 
- * It is defined as interface since the way of retrieving data can be different depending on the access (web, local) scheme.
+ * Basic interface to define functions that are necessary to access the contents of a loaded CVS file. 
+ * It is defined as interface since the way of retrieving data can be different depending on the access scheme (web, local).
  * It is further assumed that each CSV file has the first row reserved for defining the names of the columns.
  * @author Matthias Bauer
  */

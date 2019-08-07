@@ -1,7 +1,5 @@
 package de.exxcellent.core;
 
-import java.io.File;
-
 /**
  * Basic interface to load a file from a path. 
  * Since this can be a file located remotely (URL) or locally (absolute path)

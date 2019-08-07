@@ -1,7 +1,5 @@
 package de.exxcellent.impl;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -132,7 +130,6 @@ public class LocalCSVFile extends LocalFileLoader implements CSVTableOperator{
 			return false;
 		}
 		int numCols = loadedCSVTable.get(0).size();
-		int numRows = loadedCSVTable.size();
 		int rowCount = 0;
 		//Check if each row has the same amount of columns.
 		for (ArrayList<String> row: loadedCSVTable) {
@@ -155,7 +152,7 @@ public class LocalCSVFile extends LocalFileLoader implements CSVTableOperator{
 
 	@Override
 	public int getNumberOfColumns() {
-		//Only return if the list has been initialized and there is at least one row.
+		//Only access the list if it has been initialized and there is at least one row.
 		//Here, it is assumed that the table was formated properly (#columns is the same for each row).
 		if (loadedCSVTable!= null || loadedCSVTable.get(0).size() > 0 ) {
 			//Number of columns is equal to the number of entries in the first row.
