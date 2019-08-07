@@ -2,6 +2,8 @@ package de.exxcellent.challenge;
 
 import de.exxcellent.impl.LocalCSVFile;
 
+import de.exxcellent.impl.MinColDiffCSVInt;
+
 /**
  * The entry class for your solution. This class is only aimed as starting point and not intended as baseline for your software
  * design. Read: create your own classes and packages as appropriate.
@@ -18,8 +20,10 @@ public final class App {
 
         // Your preparation code …
     	LocalCSVFile csvReader = new LocalCSVFile(".\\src\\main\\resources\\de\\exxcellent\\challenge\\weather.csv");
-
-        String dayWithSmallestTempSpread = "Someday";     // Your day analysis function call …
+    	MinColDiffCSVInt colOperation = new MinColDiffCSVInt(csvReader, "MxT", "MnT");
+    	colOperation.doOperation();
+    	
+        String dayWithSmallestTempSpread = csvReader.getEntry(colOperation.getRowPosition(), "Day");     // Your day analysis function call …
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
 
         String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …

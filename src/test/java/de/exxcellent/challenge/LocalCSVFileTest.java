@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 /**
- * Example JUnit4 test case.
+ * JUnit4 test case.
  * @author Matthias Bauer <matthias.bauer90@t-online.de>
  */
 public class LocalCSVFileTest {
