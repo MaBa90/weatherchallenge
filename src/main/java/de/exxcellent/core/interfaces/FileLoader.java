@@ -1,9 +1,9 @@
-package de.exxcellent.core;
+package de.exxcellent.core.interfaces;
 
 /**
  * Basic interface to load a file from a path. 
- * Since this can be a file located remotely (URL) or locally (absolute path)
- * the class which will be used to load the file needs to implement the listed method accordingly.
+ * Since this can be a file located remotely (URL) or locally (relative path)
+ * the class which will be used to load the file needs to implement the listed methods accordingly.
  * @author Matthias Bauer
  */
 public interface FileLoader {

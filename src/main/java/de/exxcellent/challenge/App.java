@@ -9,6 +9,7 @@ import de.exxcellent.impl.MinColDiffCSVInt;
  * design. Read: create your own classes and packages as appropriate.
  *
  * @author Benjamin Schmid <benjamin.schmid@exxcellent.de>
+ * @todo Refactor to apply the football challenge.
  */
 public final class App {
 
@@ -18,15 +19,16 @@ public final class App {
      */
     public static void main(String... args) {
 
-        // Your preparation code …
+        //Load new CSV and the operation for getting the minimal column difference on it.
     	LocalCSVFile csvReader = new LocalCSVFile(".\\src\\main\\resources\\de\\exxcellent\\challenge\\weather.csv");
     	MinColDiffCSVInt colOperation = new MinColDiffCSVInt(csvReader, "MxT", "MnT");
     	colOperation.doOperation();
-    	
+
         String dayWithSmallestTempSpread = csvReader.getEntry(colOperation.getRowPosition(), "Day");     // Your day analysis function call …
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
+        
 
-        String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
-        System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
+       // String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
+       // System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
     }
 }

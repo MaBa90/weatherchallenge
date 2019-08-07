@@ -1,4 +1,4 @@
-package de.exxcellent.core;
+package de.exxcellent.core.interfaces;
 
 import java.util.ArrayList;
 

@@ -3,14 +3,13 @@ package de.exxcellent.challenge;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-
 import org.junit.jupiter.api.Test;
 
 import de.exxcellent.impl.LocalCSVFile;
 import de.exxcellent.impl.MinColDiffCSVInt;
 
 /**
- * JUnit4 test case.
+ * JUnit4 test cases for the MinColDiffCSVInt class.
  * @author Matthias Bauer <matthias.bauer90@t-online.de>
  */
 
@@ -22,7 +21,6 @@ public class MinColDiffCSVTest {
 		System.out.println("\nNoIntTest 1");
 		MinColDiffCSVInt minColDivOp = new MinColDiffCSVInt(csvReader,"R AvSLP", "1HrP TPcpn");
 		assertNull(minColDivOp.doOperation());
-		
 		System.out.println("\nNoIntTest 2");
 		csvReader = new LocalCSVFile(".\\src\\main\\resources\\de\\exxcellent\\challenge\\football.csv");	
 		minColDivOp.addFile(csvReader); 

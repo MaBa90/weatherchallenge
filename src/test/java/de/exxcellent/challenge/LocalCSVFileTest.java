@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import de.exxcellent.impl.LocalCSVFile;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,9 +15,8 @@ import org.junit.jupiter.api.BeforeAll;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-
 /**
- * JUnit4 test case.
+ * JUnit4 test cases for the for the LocalCSVFile class.
  * @author Matthias Bauer <matthias.bauer90@t-online.de>
  */
 public class LocalCSVFileTest {
@@ -40,7 +39,7 @@ public class LocalCSVFileTest {
     
     @Test
     public void noCSVFileTest() {
-    	//No csv file should not crash the program but return null.
+    	//No csv file should not crash the program, instead null should be returned.
     	System.out.println("\nnoCSVFileTest");
     	LocalCSVFile csvReader = new LocalCSVFile("someFile.test"); 
     	assertNull(csvReader.getFile()); 
@@ -49,7 +48,7 @@ public class LocalCSVFileTest {
     
     @Test
     public void CSVFileTest() {
-    	//A real csv file should be opened without problems.
+    	//A real CSV file should be opened without problems.
     	System.out.println("\nCSVFileTest");
     	assertNotNull(csvReader.getFile()); 
     	assertEquals(true, csvReader.fileIsLoaded()); 
@@ -57,7 +56,7 @@ public class LocalCSVFileTest {
     
     @Test
     public void ReadCSVTest() {
-    	//Do some random testing on the CSV datastructure.
+    	//Do some random testing on the CSV data structure.
     	//Get existing column.
     	System.out.println("\nReadCSVTest 1");
     	ArrayList<String> column = csvReader.getColumn("MxT");
@@ -68,7 +67,7 @@ public class LocalCSVFileTest {
     	assertEquals(14,numCol);
     	int numRows = csvReader.getNumberOfRows();
     	assertEquals(31,numRows);
-    	//Check row and column values
+    	//Check row and column values.
     	System.out.println("\nReadCSVTest 3");
     	assertTrue(row.equals(new ArrayList<String>(Arrays.asList("Day", "MxT", "MnT", "AvT", "AvDP", "1HrP TPcpn", "PDir", "AvSp", "Dir", "MxS", "SkyC", "MxR", "Mn", "R AvSLP"))));;
     	assertTrue(column.equals(new ArrayList<String>(Arrays.asList("88","79", "77", "77", "90", "81", "73", "75", "86", "84", "91", "88", "70", "61", "64", "79", "81", "82", "81", "84", "86", "90", "90", "90", "90", "97", "91", "84", "88", "90"))));

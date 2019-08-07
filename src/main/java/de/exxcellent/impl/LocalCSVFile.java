@@ -4,12 +4,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import de.exxcellent.core.CSVTableOperator;
-import de.exxcellent.core.LocalFileLoader;
+import de.exxcellent.core.classes.LocalFileLoader;
+import de.exxcellent.core.interfaces.CSVTableOperator;
 
 /**
- * This class implements the mechanisms to open a CSV file locally and the needed operations in order to fulfill 
- * the programming challenge. 
+ * This class implements the mechanisms to open a CSV file locally and the needed operations to access the data inside the file.
  * @author Matthias Bauer
  */
 public class LocalCSVFile extends LocalFileLoader implements CSVTableOperator{
@@ -38,10 +37,9 @@ public class LocalCSVFile extends LocalFileLoader implements CSVTableOperator{
 			System.out.println("CSV file cannot be loaded.");
 			return;
 		}
-		if (checkTable()) {
-			System.out.println("Table seems to be formatted properly.");	
+		if (!checkTable()) {
+			System.out.println("Table doesn't seem to be formatted properly.");	
 		}
-		System.out.println("CSV file has been loaded successfully.");
 	}
 
 	/**

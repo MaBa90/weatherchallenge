@@ -2,10 +2,10 @@ package de.exxcellent.impl;
 
 import java.util.ArrayList;
 
-import de.exxcellent.core.FileOperation;
+import de.exxcellent.core.interfaces.FileOperation;
 
 /**
- * This class gets the minimal distance between the rows of two defined columns (as Integers).
+ * This class gets the minimal distance between each pair of row values (as Integers) for two defined columns .
  * @author Matthias Bauer
  */
 public class MinColDiffCSVInt implements FileOperation<LocalCSVFile, Integer> {

@@ -1,7 +1,7 @@
-package de.exxcellent.core;
+package de.exxcellent.core.interfaces;
 
 /**
- * Basic interface to define a complex operation that is done on a certain type of file, e.g. a CSV file. 
+ * Basic interface to define a complex operation that is done on a certain type of file, e.g., a CSV file. 
  * This can be used for different kind of files and operations.
  * @author Matthias Bauer
  */

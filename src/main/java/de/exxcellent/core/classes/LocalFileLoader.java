@@ -1,13 +1,15 @@
-package de.exxcellent.core;
+package de.exxcellent.core.classes;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import de.exxcellent.core.interfaces.FileLoader;
+
 /**
  * This abstract class defines the basic mechanism to open a file locally. 
- * I'm pretty sure that there are better ways of loading a file instead of using a BufferedReader.
+ * I'm pretty sure that there are better ways of loading a file instead of using a BufferedReader, yet is is sufficient to solve the task.
  * @author Matthias Bauer
  */
 public abstract class LocalFileLoader implements FileLoader {
