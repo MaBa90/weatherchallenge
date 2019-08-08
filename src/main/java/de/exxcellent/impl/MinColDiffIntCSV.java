@@ -8,13 +8,13 @@ import de.exxcellent.core.interfaces.FileOperation;
  * This class gets the minimal distance between each pair of row values (as Integers) for two defined columns .
  * @author Matthias Bauer
  */
-public class MinColDiffCSVInt implements FileOperation<LocalCSVFile, Integer> {
+public class MinColDiffIntCSV implements FileOperation<LocalCSVFile, Integer> {
 	private LocalCSVFile storedFile = null;
 	private String nameColumn1 = "";
 	private String nameColumn2 = "";
 	private int foundRow = -1;
 	
-	public MinColDiffCSVInt(LocalCSVFile file, String nameC1, String nameC2) {
+	public MinColDiffIntCSV(LocalCSVFile file, String nameC1, String nameC2) {
 		addFile(file);
 		setColumnNames(nameC1, nameC2);
 	}
