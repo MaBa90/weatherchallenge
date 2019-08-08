@@ -61,16 +61,19 @@ public class LocalCSVFileTest {
     	System.out.println("\nReadCSVTest 1");
     	ArrayList<String> column = csvReader.getColumn("MxT");
     	ArrayList<String> row = csvReader.getRow(0);
+    	
     	//Check number of columns and rows.
     	System.out.println("\nReadCSVTest 2");
     	int numCol = csvReader.getNumberOfColumns();
     	assertEquals(14,numCol);
     	int numRows = csvReader.getNumberOfRows();
     	assertEquals(31,numRows);
+    	
     	//Check row and column values.
     	System.out.println("\nReadCSVTest 3");
     	assertTrue(row.equals(new ArrayList<String>(Arrays.asList("Day", "MxT", "MnT", "AvT", "AvDP", "1HrP TPcpn", "PDir", "AvSp", "Dir", "MxS", "SkyC", "MxR", "Mn", "R AvSLP"))));;
     	assertTrue(column.equals(new ArrayList<String>(Arrays.asList("88","79", "77", "77", "90", "81", "73", "75", "86", "84", "91", "88", "70", "61", "64", "79", "81", "82", "81", "84", "86", "90", "90", "90", "90", "97", "91", "84", "88", "90"))));
+    	
     	//Test field access methods.
     	System.out.println("\nReadCSVTest 4");
     	assertEquals("1",csvReader.getEntry(0,"Day"));

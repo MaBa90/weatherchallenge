@@ -9,7 +9,7 @@ import de.exxcellent.impl.LocalCSVFile;
 import de.exxcellent.impl.MinColDiffIntCSV;
 
 /**
- * JUnit4 test cases for the MinColDiffCSVInt class.
+ * JUnit4 test cases for the MinColDiffIntCSV class.
  * @author Matthias Bauer <matthias.bauer90@t-online.de>
  */
 
@@ -57,6 +57,14 @@ public class MinColDiffIntCSVTest {
     	minColDivOp.addColumnByName("MnT");
 		minColDivOp.addColumnByName("MxT");
     	assertEquals((Integer) (-54), minColDivOp.doOperation());
+    	
+    	//Test for absolute value column values
+    	System.out.println("\nTestMinValDiffValue 3");
+    	minColDivOp.removeColumns();
+    	minColDivOp.addColumnByName("MnT");
+		minColDivOp.addColumnByName("MxT");
+		minColDivOp.setUseAbsoluteValue(true);
+    	assertEquals((Integer) 2, minColDivOp.doOperation());
     }
 
 }

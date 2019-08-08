@@ -7,11 +7,12 @@ import java.util.Map.Entry;
 import de.exxcellent.core.classes.CSVColumnOperation;
 
 /**
- * This class gets the minimal distance between each pair of row values (as Integers) for two columns.
+ * This class gets the minimal distance between each pair of row values (as Integers) for TWO columns.
  * @author Matthias Bauer
  */
 public class MinColDiffIntCSV extends CSVColumnOperation<Integer> {
 	private int foundRow = -1;
+	private boolean useAbsoluteValue = false;
 	
 	public MinColDiffIntCSV(LocalCSVFile file) {
 		addFile(file);
@@ -47,9 +48,12 @@ public class MinColDiffIntCSV extends CSVColumnOperation<Integer> {
 		int smallestDiff = 0;
 		try {
 			smallestDiff = Integer.parseInt(c1.get(0)) - Integer.parseInt(c2.get(0)); 
+			//Check if absolute value should be calculated between the column values. 
+			smallestDiff = (useAbsoluteValue && smallestDiff<0) ? Math.abs(smallestDiff) :smallestDiff;
 			foundRow = 0;
 			for (int i = 1; i < c1.size(); i ++) {
 				int nextDiff = Integer.parseInt(c1.get(i)) - Integer.parseInt(c2.get(i));
+				nextDiff = (useAbsoluteValue && nextDiff<0) ? Math.abs(nextDiff) :nextDiff;
 				if (smallestDiff > nextDiff) {
 					foundRow = i;
 					smallestDiff = nextDiff;
@@ -67,5 +71,13 @@ public class MinColDiffIntCSV extends CSVColumnOperation<Integer> {
      */
 	public int getLastRowPosition() {
 		return foundRow;
+	}
+	
+	/**
+     * Setter to depict whether the absolute value is used in the operation.
+     * @param useAbsoluteValue boolean value to enable or disable the use of the absolute value.
+     */
+	public void setUseAbsoluteValue(boolean useAbsoluteValue) {
+		this.useAbsoluteValue = useAbsoluteValue;
 	}
 }

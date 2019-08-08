@@ -19,16 +19,22 @@ public final class App {
     public static void main(String... args) {
 
         //Load new CSV and the operation for getting the minimal column difference on it.
-    	LocalCSVFile csvReader = new LocalCSVFile(".\\src\\main\\resources\\de\\exxcellent\\challenge\\weather.csv");
-    	MinColDiffIntCSV colOperation = new MinColDiffIntCSV(csvReader);
+    	LocalCSVFile csvReaderWeather = new LocalCSVFile(".\\src\\main\\resources\\de\\exxcellent\\challenge\\weather.csv");
+    	MinColDiffIntCSV colOperation = new MinColDiffIntCSV(csvReaderWeather);
     	colOperation.addColumnByName("MxT");
     	colOperation.addColumnByName("MnT");
     	colOperation.doOperation();
-
-        String dayWithSmallestTempSpread = csvReader.getEntry(colOperation.getLastRowPosition(), "Day");
+        String dayWithSmallestTempSpread = csvReaderWeather.getEntry(colOperation.getLastRowPosition(), "Day");
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
         
-       // String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
-       // System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
+        LocalCSVFile csvReaderFootball = new LocalCSVFile(".\\src\\main\\resources\\de\\exxcellent\\challenge\\football.csv");
+        colOperation.addFile(csvReaderFootball);
+        colOperation.removeColumns();
+    	colOperation.addColumnByName("Goals");
+    	colOperation.addColumnByName("Goals Allowed");
+    	colOperation.setUseAbsoluteValue(true);
+    	colOperation.doOperation();
+        String teamWithSmallestGoalSpread = csvReaderFootball.getEntry(colOperation.getLastRowPosition(), "Team");
+        System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
     }
 }

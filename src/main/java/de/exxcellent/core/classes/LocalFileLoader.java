@@ -19,6 +19,7 @@ public abstract class LocalFileLoader implements FileLoader {
 	
 	@Override
 	public boolean loadFile(String path) {
+		fileLoaded = false;
 		//Use local file access.
 		try {
 			fileReader = new FileReader(path);

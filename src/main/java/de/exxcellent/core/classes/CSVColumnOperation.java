@@ -51,7 +51,7 @@ public abstract class CSVColumnOperation<ReturnType> implements FileOperation<Lo
 	}
 	
 	/**
-     * Clears the LinkeHashMap and removes all added columns.
+     * Clears the LinkedHashMap and removes all added columns.
      */
 	public void removeColumns() {
 		if (columnValues != null) {
