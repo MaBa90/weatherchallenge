@@ -1,8 +1,8 @@
 package de.exxcellent.core.interfaces;
 
 /**
- * Basic interface to define a complex operation that is done on a certain type of file, e.g., a CSV file. 
- * This can be used for different kind of files and operations.
+ * Basic interface to define a complex operation that is done on a certain type of file (FileType), e.g., a CSV file. 
+ * This can be used for different kind of files and operations, of which the result must be returned as ReturnType implies.
  * @author Matthias Bauer
  */
 public interface FileOperation<FileType, ReturnType> {
