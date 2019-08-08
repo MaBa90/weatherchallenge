@@ -1,8 +1,7 @@
 package de.exxcellent.challenge;
 
 import de.exxcellent.impl.LocalCSVFile;
-
-import de.exxcellent.impl.MinColDiffCSVInt;
+import de.exxcellent.impl.MinColDiffIntCSV;
 
 /**
  * The entry class for your solution. This class is only aimed as starting point and not intended as baseline for your software
@@ -21,10 +20,12 @@ public final class App {
 
         //Load new CSV and the operation for getting the minimal column difference on it.
     	LocalCSVFile csvReader = new LocalCSVFile(".\\src\\main\\resources\\de\\exxcellent\\challenge\\weather.csv");
-    	MinColDiffCSVInt colOperation = new MinColDiffCSVInt(csvReader, "MxT", "MnT");
+    	MinColDiffIntCSV colOperation = new MinColDiffIntCSV(csvReader);
+    	colOperation.addColumnByName("MxT");
+    	colOperation.addColumnByName("MnT");
     	colOperation.doOperation();
 
-        String dayWithSmallestTempSpread = csvReader.getEntry(colOperation.getRowPosition(), "Day");
+        String dayWithSmallestTempSpread = csvReader.getEntry(colOperation.getLastRowPosition(), "Day");
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
         
        // String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …

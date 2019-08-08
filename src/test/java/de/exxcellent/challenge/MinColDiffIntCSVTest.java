@@ -19,12 +19,25 @@ public class MinColDiffIntCSVTest {
 		//Do some testing for columns that do not contain integers. In each case the result should be null
 		LocalCSVFile csvReader = new LocalCSVFile(".\\src\\main\\resources\\de\\exxcellent\\challenge\\weather.csv");	
 		System.out.println("\nNoIntTest 1");
-		MinColDiffIntCSV minColDivOp = new MinColDiffIntCSV(csvReader,"R AvSLP", "1HrP TPcpn");
+		//MinColDiffIntCSV minColDivOp = new MinColDiffIntCSV(csvReader,"R AvSLP", "1HrP TPcpn");
+		MinColDiffIntCSV minColDivOp = new MinColDiffIntCSV(csvReader);
+		minColDivOp.addColumnByName("R AvSLP");
+		minColDivOp.addColumnByName("1HrP TPcpn");
 		assertNull(minColDivOp.doOperation());
+		
+		//Do some testing if columns are composed of strings.
 		System.out.println("\nNoIntTest 2");
 		csvReader = new LocalCSVFile(".\\src\\main\\resources\\de\\exxcellent\\challenge\\football.csv");	
-		minColDivOp.addFile(csvReader); 
-		new MinColDiffIntCSV(csvReader,"Team", "Games");
+		minColDivOp.addFile(csvReader);
+		minColDivOp.removeColumns();
+		minColDivOp.addColumnByName("Team");
+		minColDivOp.addColumnByName("Games");
+		
+		//Do some testing if only one column was added.
+		System.out.println("\nNoIntTest 3");
+		assertNull(minColDivOp.doOperation());
+		minColDivOp.removeColumns();
+		minColDivOp.addColumnByName("Team");
 		assertNull(minColDivOp.doOperation());
 	}
 	
@@ -33,11 +46,16 @@ public class MinColDiffIntCSVTest {
     	 LocalCSVFile csvReader = new LocalCSVFile(".\\src\\main\\resources\\de\\exxcellent\\challenge\\weather.csv");
     	//Do some testing for different column combinations
     	System.out.println("\nTestMinValDiffValue 1");
-    	MinColDiffIntCSV minColDivOp = new MinColDiffIntCSV(csvReader,"MxT","MnT");
+    	MinColDiffIntCSV minColDivOp = new MinColDiffIntCSV(csvReader);
+    	minColDivOp.addColumnByName("MxT");
+		minColDivOp.addColumnByName("MnT");
     	assertEquals((Integer) 2, minColDivOp.doOperation());
+    	
     	//Test for reversed column values
     	System.out.println("\nTestMinValDiffValue 2");
-    	minColDivOp.setColumnNames("MnT","MxT");
+    	minColDivOp.removeColumns();
+    	minColDivOp.addColumnByName("MnT");
+		minColDivOp.addColumnByName("MxT");
     	assertEquals((Integer) (-54), minColDivOp.doOperation());
     }
 
