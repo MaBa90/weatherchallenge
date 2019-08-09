@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.Map.Entry;
 
 import de.exxcellent.core.classes.CSVColumnOperation;
+import de.exxcellent.core.interfaces.CSVTableOperator;
 
 /**
  * This class gets the minimal distance between each pair of row values (as Integers) for TWO columns.
@@ -14,7 +15,7 @@ public class MinColDiffIntCSV extends CSVColumnOperation<Integer> {
 	private int foundRow = -1;
 	private boolean useAbsoluteValue = false;
 	
-	public MinColDiffIntCSV(LocalCSVFile file) {
+	public MinColDiffIntCSV(CSVTableOperator file) {
 		addFile(file);
 	}
 	

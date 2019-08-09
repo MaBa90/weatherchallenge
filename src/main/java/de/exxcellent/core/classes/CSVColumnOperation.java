@@ -3,6 +3,7 @@ package de.exxcellent.core.classes;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
+import de.exxcellent.core.interfaces.CSVTableOperator;
 import de.exxcellent.core.interfaces.FileOperation;
 import de.exxcellent.impl.LocalCSVFile;
 
@@ -10,13 +11,13 @@ import de.exxcellent.impl.LocalCSVFile;
  * This abstract class defines an operation which should be done between multiple columns of a CSV file. 
  * @author Matthias Bauer
  */
-public abstract class CSVColumnOperation<ReturnType> implements FileOperation<LocalCSVFile, ReturnType>  {
+public abstract class CSVColumnOperation<ReturnType> implements FileOperation<CSVTableOperator, ReturnType>  {
 	//Here, we use a linked hash map since the ordering of the inserted keys could be important.
 	protected LinkedHashMap<String,ArrayList<String>> columnValues = null; 
-	protected LocalCSVFile storedFile = null;
+	protected CSVTableOperator storedFile = null;
 	
 	@Override
-	public void addFile(LocalCSVFile file) {
+	public void addFile(CSVTableOperator file) {
 		storedFile = file;	
 	}
 	
@@ -26,7 +27,7 @@ public abstract class CSVColumnOperation<ReturnType> implements FileOperation<Lo
      * @return true if the column could be added successfully.
      */
 	public boolean addColumnByName(String colName) {
-		if (storedFile == null || !storedFile.fileIsLoaded()) {
+		if (storedFile == null ) {
 			System.out.println("File is not initialized");
 			return false;	
 		}
