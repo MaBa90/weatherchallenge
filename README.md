@@ -4,7 +4,7 @@ here is my solution of the weather challenge.
 I tried my best to separate and abstract the different steps and necessary operations for reusability.
 Here is a small diagram which shows the connections between the classes:  
 
-<img src="Diagram.PNG" width="500" title="Diagram">
+<img src="Diagram.PNG" width="600" title="Diagram">
 
 Best Regards  
 Matthias Bauer
