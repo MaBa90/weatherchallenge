@@ -33,7 +33,7 @@ It contains methods to store and prepare column data values and provide the basi
 1. LocalCSVFile  
 Class which inherits the LocalFileLoader class and implements the CSVTableOperator interface to load a locally stored CSV file and access it's data.
 2. MinColDiffCSVInt    
-Class which implements the FileOperation interface and inherits the CSVColumnOperation class in order to represent a reusable column based FileOperation which is executed on a CSV file. 
+Class which inherits the CSVColumnOperation and therefore implements the FileOperation interface in order to represent a reusable column based FileOperation which is executed on a CSV file. 
 It calculates and returns the row-wise value (only Integers) difference of two given columns and finds the row with the minimum (absolute) difference. 
 
 Tests have been added during implementation and in advance.  
