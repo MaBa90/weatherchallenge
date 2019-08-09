@@ -5,7 +5,6 @@ import java.util.LinkedHashMap;
 
 import de.exxcellent.core.interfaces.CSVTableOperator;
 import de.exxcellent.core.interfaces.FileOperation;
-import de.exxcellent.impl.LocalCSVFile;
 
 /**
  * This abstract class defines an operation which should be done between multiple columns of a CSV file. 

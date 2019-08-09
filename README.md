@@ -25,7 +25,7 @@ The interface was chosen to reuse defined file operations such as calculating th
 ###### de.exccellent.core.classes              
 1. LocalFileLoader  
 Abstract class that implements the LoadFile() method from the FileLoader interface in order to provide the basic functionality for local file access. 
-2. CSVColumnOperationLocal  
+2. CSVColumnOperation 
 Abstract class used to abstract types of FileOperation which only do operate on column values of a CSV file.
 It contains methods to store and prepare column data values and provide the basic mechanisms which should be used by any column related operation.
 
